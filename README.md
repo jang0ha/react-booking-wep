@@ -20,5 +20,9 @@
     - List Room (/owner/list-room)
 
 
-  ###링크
+  ### 링크
   https://react-hotel-booking-wheat.vercel.app/
+
+
+### 기술
+React, tailwind.css, prebuilt ui, clerk
