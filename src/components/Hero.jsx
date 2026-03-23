@@ -4,7 +4,7 @@ import { cities } from "../assets/assets";
 const Hero = () => {
   return (
     <section className='flex flex-col imtems-start py-4 justify-center px-6 md:px-16 lg:px-24 xl:px-32 text-white bg-[url("/src/assets/heroImage.png")] bg-no-repeat bg-cover bg-center min-h-screen'>
-      <span className="bg-[#49B9FF]/50 px-3.5  rounded-full mt-20 w-auto">
+      <span className="bg-[#49B9FF]/50 px-3.5 rounded-full mt-20 w-auto">
         The Ultimate Hotel Experience
       </span>
       <h1 className="font-playfair text-2xl md:text-5xl md:text-[56px] font-bold md:font-extrabold max-w-xl mt-4">

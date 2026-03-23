@@ -28,8 +28,6 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Hotels", path: "/rooms" },
-    { name: "Experience", path: "/" },
-    { name: "About", path: "/" },
   ];
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,6 +96,7 @@ const Navbar = () => {
         {user && (
           <button
             className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${isScrolled ? "text-black" : "text-white"} transition-all`}
+            onClick={() => navigate("/owner")}
           >
             Dash board
           </button>
@@ -195,7 +194,10 @@ const Navbar = () => {
         {user && (
           <button
             className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
-            onClick={() => navigate("/owner")}
+            onClick={() => {
+              navigate("/owner");
+              setIsMenuOpen(false);
+            }}
           >
             Dashboard
           </button>

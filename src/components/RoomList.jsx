@@ -1,29 +1,14 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Star from "../components/Star";
 const RoomList = ({ room }) => {
-  const Star = ({ filled }) => (
-    <svg
-      className="w-4 h-4 text-yellow-400"
-      fill={filled ? "currentColor" : "none"}
-      stroke="currentColor"
-      strokeWidth="1.5"
-      viewBox="0 0 24 24"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M12 17.25l-6.16 3.73 1.64-7.03L2.5 9.77l7.19-.61L12 2.5l2.31 6.66 7.19.61-5 4.18 1.64 7.03z"
-      />
-    </svg>
-  );
-  const navigate = useNavigate();
   return (
-    <div
-      className="flex flex-col md:flex-row items-start py-10 gap-6  cursor-pointer"
-      onClick={() => {
-        (navigate(`/rooms/${room._id}`), scrollTo(0, 0));
-      }}
+    <Link
+      to={"/rooms/" + room._id}
+      className="flex flex-col md:flex-row items-start py-10 gap-6  
+			cursor-pointer"
+      onClick={() => scrollTo(0, 0)}
     >
       <img
         src={room.images[0]}
@@ -31,17 +16,13 @@ const RoomList = ({ room }) => {
         title="View RoomDetails"
         className="max-h-65 md:w-1/2 rounded-xl shadow-lg object-cover"
       />
-      <div className="md:w-1/2 flex flex-col gap-2">
+      <div className="md:w-2/2 flex flex-col gap-2">
         <p className="text-gray-500">{room.hotel.city}</p>
         <p className="text-gray-800 text-3xl font-playfair cursor-pointer">
           {room.hotel.name}
         </p>
         <div className="flex items-center">
-          {Array(5)
-            .fill(0)
-            .map((_, index) => (
-              <Star key={index} filled={room.rating > index} />
-            ))}
+          <Star rating={room.rating} />
           <p className="ml-2">200+ review</p>
         </div>
         <div className="flex items-center gap-1 text-gray-500 mt-2 text-sm">
@@ -63,7 +44,7 @@ const RoomList = ({ room }) => {
           {room.pricePerNight} /night
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
