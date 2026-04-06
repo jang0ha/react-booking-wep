@@ -1,164 +1,160 @@
-# 🏨 Hotel Booking System
+# 🏨 호텔 예약 시스템
 
-A modern hotel booking application built with React, allowing users to browse hotels, make bookings, and hotel owners to manage their properties.
+React로 만든 현대적인 호텔 예약 애플리케이션입니다. 사용자가 호텔을 검색하고 예약할 수 있으며, 호텔 오너는 자신의 호텔을 관리할 수 있습니다.
 
-## 🚀 Features
+## 🚀 주요 기능
 
-### For Guests
+### 게스트 기능
+- **호텔 검색** - 이용 가능한 모든 호텔과 객실을 상세 정보와 함께 탐색
+- **객실 상세 조회** - 객실 정보, 편의시설, 가격 등 자세히 확인
+- **예약 관리** - 내 예약 현황 추적 및 관리
+- **인증** - Clerk을 이용한 안전한 로그인
 
-- **Browse Hotels** - Explore all available hotels and rooms with detailed information
-- **Room Details** - View comprehensive room information, amenities, and pricing
-- **Booking Management** - Track and manage your bookings
-- **Authentication** - Secure login with Clerk authentication
+### 호텔 오너 기능
+- **대시보드** - 호텔 운영 현황 개요
+- **객실 관리** - 호텔 객실 추가, 수정, 관리
+- **객실 목록** - 등록된 객실 확인 및 정리
+- **객실 등록** - 상세 정보와 함께 새 객실 등록
 
-### For Hotel Owners
+## 🛠️ 기술 스택
 
-- **Dashboard** - Overview of your hotel operations
-- **Room Management** - Add, edit, and manage your hotel rooms
-- **Listings** - View and organize your available rooms
-- **Room Registration** - Register new rooms with detailed information
+- **프론트엔드 프레임워크**: React 19.2
+- **빌드 도구**: Vite 7.0
+- **라우팅**: React Router 7.13
+- **인증**: Clerk 6.1
+- **스타일링**: TailwindCSS 4.2
+- **언어**: JavaScript (ES Modules)
+- **린팅**: ESLint 9.39
 
-## 🛠️ Tech Stack
-
-- **Frontend Framework**: React 19.2
-- **Build Tool**: Vite 7.0
-- **Routing**: React Router 7.13
-- **Authentication**: Clerk 6.1
-- **Styling**: TailwindCSS 4.2
-- **Language**: JavaScript (ES Modules)
-- **Linting**: ESLint 9.39
-
-## 📁 Project Structure
+## 📁 프로젝트 구조
 
 ```
 client/
 ├── src/
 │   ├── pages/
-│   │   ├── Home.jsx                 # Landing page
-│   │   ├── AllRooms.jsx            # Browse all rooms
-│   │   ├── RoomDetail.jsx          # Room details and booking
-│   │   ├── MyBookings.jsx          # User's bookings
+│   │   ├── Home.jsx                 # 홈 페이지
+│   │   ├── AllRooms.jsx            # 모든 객실 조회
+│   │   ├── RoomDetail.jsx          # 객실 상세 페이지
+│   │   ├── MyBookings.jsx          # 내 예약 현황
 │   │   └── hotelOwner/
-│   │       ├── Layout.jsx          # Owner layout wrapper
-│   │       ├── Dashboard.jsx       # Owner dashboard
-│   │       ├── AddRoom.jsx         # Add new room
-│   │       └── ListRoom.jsx        # Manage rooms
+│   │       ├── Layout.jsx          # 오너 레이아웃
+│   │       ├── Dashboard.jsx       # 오너 대시보드
+│   │       ├── AddRoom.jsx         # 객실 추가
+│   │       └── ListRoom.jsx        # 객실 관리
 │   ├── components/
-│   │   ├── Navbar.jsx              # Navigation bar
-│   │   ├── Footer.jsx              # Footer
-│   │   ├── HotelCards.jsx          # Hotel card component
-│   │   ├── RoomList.jsx            # Room listing
-│   │   ├── HotelReg.jsx            # Hotel registration
-│   │   ├── Hero.jsx                # Hero section
-│   │   ├── FeatureDestination.jsx  # Featured destinations
-│   │   ├── ExclusiveOffers.jsx     # Offers section
-│   │   ├── Newsletter.jsx          # Newsletter signup
-│   │   ├── Testimonial.jsx         # Customer testimonials
+│   │   ├── Navbar.jsx              # 네비게이션 바
+│   │   ├── Footer.jsx              # 푸터
+│   │   ├── HotelCards.jsx          # 호텔 카드 컴포넌트
+│   │   ├── RoomList.jsx            # 객실 목록
+│   │   ├── HotelReg.jsx            # 호텔 등록
+│   │   ├── Hero.jsx                # 히어로 섹션
+│   │   ├── FeatureDestination.jsx  # 특색 있는 목적지
+│   │   ├── ExclusiveOffers.jsx     # 특별 할인 섹션
+│   │   ├── Newsletter.jsx          # 뉴스레터 구독
+│   │   ├── Testimonial.jsx         # 고객 후기
 │   │   └── HotelOwner/
-│   │       ├── Navbar.jsx          # Owner navigation
-│   │       └── Sidebar.jsx         # Owner sidebar menu
+│   │       ├── Navbar.jsx          # 오너 네비게이션
+│   │       └── Sidebar.jsx         # 오너 사이드바
 │   ├── assets/
-│   │   └── assets.js               # Asset imports
-│   ├── App.jsx                     # Main app component
-│   ├── main.jsx                    # Entry point
+│   │   └── assets.js               # 에셋 임포트
+│   ├── App.jsx                     # 메인 앱 컴포넌트
+│   ├── main.jsx                    # 진입점
 │   └── index.html
 ├── package.json
 ├── vite.config.js
 ├── eslint.config.js
-└── vercel.json                     # Deployment config
+└── vercel.json                     # 배포 설정
 ```
 
-## 🚀 Getting Started
+## 🚀 시작하기
 
-### Prerequisites
+### 필수 요구사항
+- Node.js 18+ 
+- npm 또는 yarn
 
-- Node.js 18+
-- npm or yarn
-
-### Installation
+### 설치 방법
 
 ```bash
-# Install dependencies
+# 의존성 설치
 npm install
 
-# Set up environment variables
-# Create a .env file in the client directory with required variables
+# 환경 변수 설정
+# client 디렉토리에 .env 파일을 만들고 필요한 변수 추가
 ```
 
-### Development
+### 개발 시작
 
 ```bash
-# Start development server with HMR
+# HMR이 활성화된 Vite 개발 서버 시작
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`
+애플리케이션은 `http://localhost:5173`에서 실행됩니다.
 
-### Build for Production
+### 프로덕션 빌드
 
 ```bash
-# Build the application
+# 프로덕션용 빌드
 npm run build
 
-# Preview production build locally
+# 로컬에서 프로덕션 빌드 미리보기
 npm run preview
 ```
 
-## 🔧 Available Scripts
+## 🔧 사용 가능한 명령어
 
-| Command           | Description                                       |
-| ----------------- | ------------------------------------------------- |
-| `npm run dev`     | Start Vite dev server with hot module replacement |
-| `npm run build`   | Create optimized production build                 |
-| `npm run lint`    | Run ESLint to check code quality                  |
-| `npm run preview` | Preview the production build locally              |
+| 명령어 | 설명 |
+|--------|------|
+| `npm run dev` | 핫 모듈 교체(HMR)가 활성화된 Vite 개발 서버 시작 |
+| `npm run build` | 최적화된 프로덕션 빌드 생성 |
+| `npm run lint` | ESLint로 코드 품질 점검 |
+| `npm run preview` | 로컬에서 프로덕션 빌드 미리보기 |
 
-## 🔐 Authentication
+## 🔐 인증
 
-The application uses **Clerk** for secure authentication. Users can:
+애플리케이션은 **Clerk**을 사용한 안전한 인증을 제공합니다. 사용자는 다음이 가능합니다:
+- 이메일로 회원가입
+- 기존 계정으로 로그인
+- 인증 상태에 따른 보호된 라우트 접근
 
-- Sign up with email
-- Login with existing credentials
-- Access protected routes based on authentication status
+## 🎨 스타일링
 
-## 🎨 Styling
+TailwindCSS가 유틸리티 중심의 스타일링으로 설정되어 있습니다. 프로젝트는 최적의 성능을 위해 TailwindCSS Vite 플러그인을 사용합니다.
 
-TailwindCSS is configured for utility-first styling. The project uses the TailwindCSS Vite plugin for optimal performance.
+## 📱 주요 라우트
 
-## 📱 Key Routes
+| 라우트 | 설명 |
+|--------|------|
+| `/` | 홈 페이지 |
+| `/rooms` | 모든 이용 가능한 객실 |
+| `/rooms/:id` | 객실 상세 페이지 |
+| `/my-bookings` | 내 예약 목록 |
+| `/owner` | 호텔 오너 대시보드 |
+| `/owner/add-room` | 새 객실 추가 |
+| `/owner/list-room` | 호텔 객실 관리 |
 
-| Route              | Description           |
-| ------------------ | --------------------- |
-| `/`                | Home page             |
-| `/rooms`           | All available rooms   |
-| `/rooms/:id`       | Room details page     |
-| `/my-bookings`     | User's bookings       |
-| `/owner`           | Hotel owner dashboard |
-| `/owner/add-room`  | Add new room          |
-| `/owner/list-room` | Manage hotel rooms    |
+## 🧹 코드 품질
 
-## 🧹 Code Quality
-
-The project uses ESLint for code quality:
+프로젝트는 ESLint를 사용하여 코드 품질을 유지합니다:
 
 ```bash
 npm run lint
 ```
 
-## 🌐 Deployment
+## 🌐 배포
 
-The project includes `vercel.json` configuration for easy deployment to Vercel.
+프로젝트에는 Vercel로 쉽게 배포할 수 있도록 `vercel.json` 설정이 포함되어 있습니다.
 
-## 📝 Notes
+## 📝 참고사항
 
-- The HotelReg component is currently disabled (see `App.jsx` line 19)
-- Hotel owner routes are in a separate namespace (`/owner`)
-- Navigation bar is hidden on owner routes to maintain separate UI
+- HotelReg 컴포넌트는 현재 비활성화 상태입니다 (`App.jsx` 19번 줄 참고)
+- 호텔 오너 라우트는 별도의 네임스페이스(`/owner`)에 있습니다
+- 오너 라우트에서는 별도의 UI를 유지하기 위해 네비게이션 바가 숨겨집니다
 
-## 🤝 Contributing
+## 🤝 기여
 
-Feel free to submit issues and enhancement requests!
+이슈 제출 및 개선 사항 제안은 언제든지 환영합니다!
 
-## 📄 License
+## 📄 라이선스
 
-This project is created for educational and development purposes.
+이 프로젝트는 교육 및 개발 목적으로 만들어졌습니다.
